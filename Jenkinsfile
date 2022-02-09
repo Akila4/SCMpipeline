@@ -1,7 +1,8 @@
 node{
    stage('SCM Checkout'){
+      dir("/var/lib/jenkins/workspace/docker-test/$BUILD_NUMBER"){
        git branch: 'main', url: 'https://github.com/Akila4/SCMpipeline.git'
-        
+        }
    }
    stage('Docker File Creation'){
        sh '''#!/bin/bash
